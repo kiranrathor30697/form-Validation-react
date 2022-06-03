@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Validation from './components/Validation';
+import FormValidWithEmail from './components/FormValidWithEmail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,6 +12,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Validation />} />
+        <Route path="/emailvalidat" element={<FormValidWithEmail />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,15 +1,15 @@
 import '../App.css'
 
-function Validation() {
+function FormValidWithEmail() {
   //1.hook Area
 
 
   //2.Function Defination
 
   let handleKeyUp = (e)=>{
-    // console.log(e.target.value);
       //console.log("okok");
-        let getValue = e.target.value;
+      let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 
         let fname = document.getElementById('fname');
         let lname = document.getElementById('lname');
@@ -25,14 +25,18 @@ function Validation() {
 
         if((fname.value) !== ""){
             fn.innerHTML="";
-        }else{
+        }else if(fname.value == ""){
             fn.innerHTML = "Please Enter your First Name";
         }if(lname.value !== ""){
             ln.innerHTML = "";
         }else{
             ln.innerHTML = "Please Enter your Last Name";
         }if(email.value !== ""){
-            em.innerHTML = "";
+            if(email.value.match(mailformat)){   
+                em.innerHTML = "";
+                }else{
+                em.innerHTML ="You have entered an invalid email address!";
+            }
         }else{
             em.innerHTML = "Please Enter your Email Address";
         }if(password.value !== ""){
@@ -51,6 +55,18 @@ function Validation() {
         }else{
             ps_cn.innerHTML = "Please Enter your Confirm Password";
         }
+
+                    if(email.value.match(mailformat))
+                    {   
+                        em.innerHTML =""
+                        return true;
+                        }
+                    else
+                    {
+                        em.innerHTML ="You have entered an invalid email address!";
+                        //document.form1.text1.focus();
+                        return false;
+                    }
     }
 
   let handleClick =(e)=>{
@@ -119,4 +135,4 @@ function Validation() {
   );
 }
 
-export default Validation;
+export default FormValidWithEmail;
