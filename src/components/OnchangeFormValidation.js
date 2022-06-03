@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function FullValidatReact() {
+export default function OnchangeFormValidation() {
     // 1.state /hook variable
  const [state, setState] = useState({
      fname: '',
@@ -9,9 +9,13 @@ export default function FullValidatReact() {
      password:'',
      con_password:''
  });
- const [error, setError] = useState({});
- //console.log(error);
- const [submit,setSubmit] = useState(false)
+ const [error, setError] = useState({
+    fname: '',
+    lname:'',
+    email:'',
+    password:'',
+    con_password:''
+ });
 
     //2.methods
     let handleChange = (e)=>{
@@ -20,18 +24,11 @@ export default function FullValidatReact() {
         setState({...state,[name]:value});
     }
 
-    useEffect(() => {
-        //console.log(error);
-        if (Object.keys(error).length === 0 && submit) {
-          console.log(state);
-        }
-      }, [error]);
 
 
     let handleSubmit =(e)=>{
         e.preventDefault();
         setError(myFormValidatError(state))
-        setSubmit(true);
     }
 
 
