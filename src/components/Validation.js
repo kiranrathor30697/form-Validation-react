@@ -41,16 +41,18 @@ function Validation() {
             ps.innerHTML = "Please Enter your Password";
         }if(con_password.value !== ""){   
             ps_cn.innerHTML = "";
+            if(password.value == con_password.value ){
+                console.log("matched");
+                ps_cn.innerHTML = "";
+            }else{
+                console.log("not matched");
+                ps_cn.innerHTML = "This Password is not Match";
+            }
         }else{
             ps_cn.innerHTML = "Please Enter your Confirm Password";
         }
     }
 
-    // if(password.value == con_password){
-    //     ps_cn.innerHTML = "";
-    // }else{
-    //     console.log("This Password is not Match")
-    // }
   let handleClick =(e)=>{
     e.preventDefault();
 
