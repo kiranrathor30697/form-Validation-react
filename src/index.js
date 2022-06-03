@@ -5,6 +5,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Validation from './components/Validation';
 import FormValidWithEmail from './components/FormValidWithEmail';
+import FormValidWithPassword from './components/FormValidWithPassword';
+import Error from './components/Error';
+import FullValidatReact from './components/FullValidatReact';
+import MyLogicFormValidat from './components/MyLogicFormValidat';
+import Test from './components/Text';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +18,11 @@ root.render(
       <Routes>
         <Route path="/" element={<Validation />} />
         <Route path="/emailvalidat" element={<FormValidWithEmail />} />
+        <Route path="/passwordvalidat" element={<FormValidWithPassword />} />
+        <Route path="/fullvalidformreact" element={<FullValidatReact />} />
+        <Route path="/mylogicformvalidat" element={<MyLogicFormValidat />} />
+        <Route path="/test" element={<Test />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
