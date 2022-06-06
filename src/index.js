@@ -11,7 +11,8 @@ import FullValidatReact from './components/FullValidatReact';
 import MyLogicFormValidat from './components/MyLogicFormValidat';
 import Test from './components/Text';
 import TestingOnline from './components/TestingOnline';
-import OnchangeFormValidation from './components/OnchangeFormValidation';
+import OnchangeFormValidationReact from './components/onchangeFormValidationReact';
+import App from './components/TestingOnline';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,9 +24,9 @@ root.render(
         <Route path="/passwordvalidat" element={<FormValidWithPassword />} />
         <Route path="/fullvalidformreact" element={<FullValidatReact />} />
         <Route path="/mylogicformvalidat" element={<MyLogicFormValidat />} />
-        <Route path="/onchangeformvalidation" element={<OnchangeFormValidation />} />
+        <Route path="/onchangeformvalidationreact" element={<OnchangeFormValidationReact />} />
         <Route path="/testingonline" element={<TestingOnline />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/app" element={<App />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
