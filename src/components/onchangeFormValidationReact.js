@@ -22,23 +22,46 @@ export default function OnchangeFormValidationReact() {
     }
 
     let remove = (values)=>{
-        // const textformate = /^[a-zA-Z]+$/;
+        const textformate = /^[a-zA-Z]+$/;
         const emailformat = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if(values.fname){
-            error.fname = ""
-            // console.log("okoko")
-        }
+            if(!textformate.test(values.fname)){
+                error.fname = "Please Enter only Aphabets";
+            }else{
+                error.fname = ""
+            }
+        } 
          if (values.lname){
-            error.lname = ""
+            if(!textformate.test(values.lname)){
+                error.lname = "Please Enter only Aphabets";
+            }else{
+                error.lname = ""
+            }
         }
          if(values.email){
-            error.email = ""
+            if(!emailformat.test(values.email)){
+                error.email = "This is not a valid email format!";
+            }else{
+                error.email = ""
+            }
         }
          if(values.password){
-            error.password = ""
+            if(values.password.length < 5){
+                error.password = "Please Enter Your Minimum 5 Digites ";
+            }else if(values.password.length > 10){
+                error.password = "Please Enter Your Maximum 10 Digites ";
+            }else{
+                error.password = ""
+            }    
         }
          if(values.con_password){
-            error.con_password = ""
+            if(values.password == values.con_password){
+                error.con_password = ""
+            }else{
+                error.con_password = "Please check password does not match";
+            }
+        }else{
+
         }
     }
 
